@@ -1,4 +1,4 @@
-**Plan**
+# Plan
 
 Render productData from store.js
 // Plug that data into ProductArray
@@ -28,8 +28,6 @@ Tracking state:
 **Event:**
 Update state: remainingProducts--;
 
-generateRandomNumber()
-
 For each button...
   * Update state: numTimesDisplayed
   * removeProductsById(product.value)
@@ -44,7 +42,7 @@ If there are no products remaining, display results; else, initializeNewProductB
 
 Randomize indices:
 generateRandomProducts()
-* Generate random number between 0 and 3
+* generateRandomNumber: Generate random number
 * Assign to index
 * Ensure that there are no duplicates
   * Create first item; compare second to first item; compare third to first and to second
