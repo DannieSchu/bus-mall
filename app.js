@@ -22,27 +22,56 @@ const initializeState = () => {
 initializeState();
 
 
+// get current data of button
+const form = document.querySelector('form');
+
+
 // display three random products
 const displayThreeProducts = () => {
     // generate three random products
-    const randomProducts = generateThreeRandomProducts(productData);
+    const randomlyGeneratedProducts = generateThreeRandomProducts(productData);
+
     // get three random products
-    randomProducts.forEach(randomProduct => renderProduct());
+    randomlyGeneratedProducts.forEach(item => {
+        const labelElement = renderProduct(item);
+        form.appendChild(labelElement);
+        
+    });
+    // generate button
+    const button = document.createElement('button');
+    button.textContent = 'Vote!';
+    form.appendChild(button);
 };
 
 displayThreeProducts();
 
 
 
-
-// get current data of button
-
 // Add event listener to each button to select one of the three products
+form.addEventListener('submit', (e) => {
+    // prevent default behavior (form reset)
+    e.preventDefault();
 
-  // When user selects, update total votes
+    // get form data
+    const formData = new FormData(form);
 
-  // see if the user has selected the clicked item before
+    // get data for generated product
+    const selectedProductId = formData.get('product');
+    
+    // When user selects, update total votes
+    allProductsVotes++;
+    
+    // if the user has selected an item before, increase votes
+    const productsInVotesArray = findById(selectedProductVotes, selectedProductId);
 
-  // if something exists in this array, then increment votes for that product
-
-
+    // if something exists in this array, then increment votes for that product; if it's empty, push an item
+    if (productsInVotesArray) {
+        productsInVotesArray.votes++;
+    } else {
+        selectedProductVotes.push({
+            id: selectedProductId,
+            votes: 1,
+        }
+        );
+    }
+});

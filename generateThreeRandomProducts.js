@@ -11,7 +11,7 @@ export const generateThreeRandomProducts = (someProducts) => {
     let randomProduct2 = getRandomProduct(someProducts);
     let randomProduct3 = getRandomProduct(someProducts);
 
-    // while the second product has the same id as the first product, generate a new item for the second product
+    // generate new items for the second and third products if there are duplicates
     while (randomProduct1.id === randomProduct2.id 
         || randomProduct2.id === randomProduct3.id 
         || randomProduct3.id === randomProduct1.id
@@ -19,5 +19,7 @@ export const generateThreeRandomProducts = (someProducts) => {
         randomProduct2 = getRandomProduct(someProducts);
         randomProduct3 = getRandomProduct(someProducts);
     }
+
+    // return array of three non-duplicated products
     return [randomProduct1, randomProduct2, randomProduct3];
 };

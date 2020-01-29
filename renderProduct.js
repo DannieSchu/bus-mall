@@ -1,10 +1,11 @@
 export default function renderProduct(product) {
-    // Create buttons in the DOM
+    // Render elements in the DOM
     const labelElement = document.createElement('label');
     const inputElement = document.createElement('input');
     inputElement.type = 'radio';
     inputElement.value = product.id;
-    console.log(product);
+    inputElement.name = 'product';
+    inputElement.checked = false;
 
     const imageElement = document.createElement('img');
     imageElement.src = './assets/' + product.image;
@@ -12,10 +13,8 @@ export default function renderProduct(product) {
     const pElement = document.createElement('p');
     pElement.textContent = product.name;
 
-    // create a div, attach each button 
-    inputElement.appendChild(imageElement);
-    inputElement.appendChild(pElement);
-    labelElement.appendChild(inputElement);
+   
+    labelElement.append(imageElement, pElement, inputElement);
 
     return labelElement;
 }

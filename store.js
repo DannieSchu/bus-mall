@@ -86,7 +86,7 @@ export const productDataArray = [
     {
         id: 'sweep',
         name: 'Baby Sweep Onesie',
-        image: 'sweep.jpg',
+        image: 'sweep.png',
     },
 
     {
@@ -104,7 +104,7 @@ export const productDataArray = [
     {
         id: 'usb',
         name: 'USB',
-        image: 'usb.jpg',
+        image: 'usb.gif',
     },
 
     {

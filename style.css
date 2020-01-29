@@ -41,11 +41,11 @@ main {
     padding: 20px;
 }
 
-.button-section {
+form {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
 }
 
 label {
@@ -55,11 +55,23 @@ label {
 }
 
 label > img {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     cursor: pointer;
 }
 
 input {
     display: none;
+}
+
+button {
+    background-color: #003A4F;    
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 30px;
 }
