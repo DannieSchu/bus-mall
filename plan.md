@@ -47,7 +47,7 @@ generateRandomProducts()
 * Ensure that there are no duplicates
   * Create first item; compare second to first item; compare third to first and to second
 
-renderProducts()
+renderProduct()
 * Create an input element in the DOM
 * Append to it with id and image
 

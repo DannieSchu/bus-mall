@@ -6,7 +6,7 @@ export class ProductArray {
     }
 
     // get new products by their id from the array
-    getProductsById(someId) {
+    getProductsById(someItems, someId) {
         let productMatch;
 
         this.products.forEach(product => {

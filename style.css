@@ -48,9 +48,18 @@ main {
     align-content: center;
 }
 
-button {
+label {
+    margin: 15px;
+    color: white;
+    text-align: center; 
+}
+
+label > img {
     width: 400px;
     height: 400px;
     cursor: pointer;
-    margin: 15px;
+}
+
+input {
+    display: none;
 }

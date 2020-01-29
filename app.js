@@ -1,21 +1,48 @@
-import { ProductArray } from './ProductArray.js';
-import { productData } from './store.js';
-import generateThreeRandomProducts from './generateThreeRandomProducts.js';
+// import { ProductArray } from './ProductArray.js';
+import { productDataArray } from './store.js';
+import { generateThreeRandomProducts } from './generateThreeRandomProducts.js';
 import renderProduct from './renderProduct.js';
+import findById from './findById.js';
 
-// const optionButtons = document.querySelectorAll('button');
-// const productImageTags = document.querySelectorAll('input');
+// make copy of data
+const productData = productDataArray.slice();
 
-// pass treeData into new ProductArray class and store as "products"
-const products = new ProductArray(productData);
+// keep track of total votes
+let allProductsVotes;
 
-generateThreeRandomProducts(products);
+// keep track of votes for a given product
+let selectedProductVotes;
 
-
-const initializeNewProductButtons = () => {
-// get three random products
-    generateThreeRandomProducts(products);
-    renderProduct(randomProduct);
+// set votes array and total votes to initial states
+const initializeState = () => {
+    allProductsVotes = 0;
+    selectedProductVotes = [];
 };
 
-initializeNewProductButtons();
+initializeState();
+
+
+// display three random products
+const displayThreeProducts = () => {
+    // generate three random products
+    const randomProducts = generateThreeRandomProducts(productData);
+    // get three random products
+    randomProducts.forEach(randomProduct => renderProduct());
+};
+
+displayThreeProducts();
+
+
+
+
+// get current data of button
+
+// Add event listener to each button to select one of the three products
+
+  // When user selects, update total votes
+
+  // see if the user has selected the clicked item before
+
+  // if something exists in this array, then increment votes for that product
+
+

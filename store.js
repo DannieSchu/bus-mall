@@ -1,4 +1,4 @@
-export const productData = [
+export const productDataArray = [
     {
         id: 'bag',
         name: 'Star Wars Bag',
