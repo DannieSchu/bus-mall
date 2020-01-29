@@ -68,7 +68,7 @@ export const productDataArray = [
     {
         id: 'pet-sweep',
         name: 'Pet Sweep Dust Boots',
-        image: 'petSweep.jpg',
+        image: 'pet-sweep.jpg',
     },
 
     {

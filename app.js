@@ -1,4 +1,3 @@
-// import { ProductArray } from './ProductArray.js';
 import { productDataArray } from './store.js';
 import { generateThreeRandomProducts } from './generateThreeRandomProducts.js';
 import renderProduct from './renderProduct.js';
@@ -35,8 +34,8 @@ const displayThreeProducts = () => {
     randomlyGeneratedProducts.forEach(item => {
         const labelElement = renderProduct(item);
         form.appendChild(labelElement);
-        
     });
+
     // generate button
     const button = document.createElement('button');
     button.textContent = 'Vote!';
@@ -47,7 +46,7 @@ displayThreeProducts();
 
 
 
-// Add event listener to each button to select one of the three products
+// Add event listener to button
 form.addEventListener('submit', (e) => {
     // prevent default behavior (form reset)
     e.preventDefault();
@@ -74,4 +73,16 @@ form.addEventListener('submit', (e) => {
         }
         );
     }
+    
+    if (allProductsVotes >= 25) {
+        window.location = "./results.html";
+    } else {
+        // remove previous products????
+        // display three new products
+        displayThreeProducts();
+    }
 });
+
+// function reset() {
+//     initializeState();
+// }
