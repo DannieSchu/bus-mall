@@ -34,8 +34,8 @@ const displayThreeProducts = () => {
     randomlyGeneratedProducts.forEach(item => {
         const labelElement = renderProduct(item);
         form.appendChild(labelElement);
+    
     });
-
     // generate button
     const button = document.createElement('button');
     button.textContent = 'Vote!';
@@ -70,19 +70,23 @@ form.addEventListener('submit', (e) => {
         selectedProductVotes.push({
             id: selectedProductId,
             votes: 1,
-        }
-        );
+        });
     }
+
+    localStorage.setItem('votes', JSON.stringify(selectedProductVotes));
     
-    if (allProductsVotes >= 25) {
-        window.location = "./results.html";
+
+    if (allProductsVotes === 10) {
+        window.location = './results/index.html';
     } else {
-        // remove previous products????
         // display three new products
+        while (form.firstChild) {
+            form.removeChild(form.firstChild);
+        }
+
         displayThreeProducts();
     }
 });
 
-// function reset() {
-//     initializeState();
-// }
+
+export { initializeState };
