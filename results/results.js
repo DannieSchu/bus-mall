@@ -1,5 +1,3 @@
-import { initializeState } from '../app.js';
-
 
 const productVotes = JSON.parse(localStorage.getItem('votes'));
 
@@ -20,7 +18,7 @@ new Chart(ctx, {
         datasets: [{
             label: '# of Votes',
             data: votes,
-            backgroundColor: ['lightBlue', 'lightRed', 'yellow', 'lightGreen', 'white', 'pink']
+            backgroundColor: ['lightBlue', 'salmon', 'yellow', 'lightGreen', 'white', 'pink']
         }]
     },
     options: {
@@ -37,6 +35,6 @@ new Chart(ctx, {
 const resetButton = document.getElementById('reset-button');
 
 resetButton.addEventListener('click', () => {
+    localStorage.clear();
     window.location = '../';
-    initializeState();
 });

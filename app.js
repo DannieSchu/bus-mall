@@ -23,6 +23,7 @@ initializeState();
 
 // get current data of button
 const form = document.querySelector('form');
+console.log(form);
 
 
 // display three random products
@@ -34,7 +35,8 @@ const displayThreeProducts = () => {
     randomlyGeneratedProducts.forEach(item => {
         const labelElement = renderProduct(item);
         form.appendChild(labelElement);
-    
+    // error: can't append child to null
+
     });
     // generate button
     const button = document.createElement('button');
@@ -76,7 +78,7 @@ form.addEventListener('submit', (e) => {
     localStorage.setItem('votes', JSON.stringify(selectedProductVotes));
     
 
-    if (allProductsVotes === 10) {
+    if (allProductsVotes === 5) {
         window.location = './results/index.html';
     } else {
         // display three new products
@@ -87,6 +89,3 @@ form.addEventListener('submit', (e) => {
         displayThreeProducts();
     }
 });
-
-
-export { initializeState };
