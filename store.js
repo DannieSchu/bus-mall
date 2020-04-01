@@ -119,28 +119,3 @@ export const productDataArray = [
         image: 'wine-glass.jpg',
     },
 ];
-
-// const products = [
-//     bag,
-//     banana,
-//     bathroom,
-//     boots,
-//     breakfast,
-//     bubblegum,
-//     chair,
-//     cthulhu,
-//     dogDuck,
-//     dragon,
-//     pen,
-//     petSweep,
-//     scissors,
-//     shark,
-//     sweep,
-//     tauntaun,
-//     unicorn,
-//     usb,
-//     waterCan,
-//     wineGlass
-// ];
-
-// export default products;
